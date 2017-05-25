@@ -5,13 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=production tsc",
-    "schema": "ts-node ./src/build/create-schemas.ts",
-    "clean": "rm -rf ./build",
-    "clean:build": "yarn clean && yarn build",
-    "server": "NODE_ENV=production forever --spinSleepTime 1000 --minUptime 1000 ./build/index.js",
-    "clean:server": "yarn run clean && yarn run build && yarn run server",
-    "start": "ts-node src/index.ts",
-    "watch": "nodemon"
+    "pages":"git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "ts-node": "^3.0.4",
