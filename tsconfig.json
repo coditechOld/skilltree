@@ -1,0 +1,29 @@
+{ "compilerOptions":
+  { "target": "es2016"
+  , "outDir": "build"
+  , "rootDir": "src"
+  , "moduleResolution": "node"
+  , "module": "commonjs"
+  , "declaration": true
+  , "importHelpers": true
+  , "inlineSourceMap": false
+  , "listFiles": false
+  , "sourceMap": true
+  , "inlineSources": true
+  , "traceResolution": false
+  , "jsx":"react"
+  , "pretty": true
+  , "lib" :
+    [ "es6"
+    , "dom"
+    ]
+  , "baseUrl": "."
+  }
+, "include":
+  [ "src/**/*.ts"
+  ]
+, "exclude":
+  [ "node_modules/**"
+  ]
+, "compileOnSave": false
+}

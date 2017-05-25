@@ -1,0 +1,23 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/node_modules":true,
+        ".build":true,
+        "**/.vscode":true
+    },
+    "editor.tabSize": 2,
+    "typescript.format.enable": false,
+    "javascript.format.enable": false,
+    "json.format.enable": false,
+    "json.schemas": 
+    [ { "fileMatch": 
+        [ "configs/*/config.json"
+        ]
+      , "url":"./src/schemas/UserConfig.json"
+      }    
+    ]   
+  }

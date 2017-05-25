@@ -1,0 +1,154 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "Dict<LabelLocations[]>": {
+            "additionalProperties": {
+                "$ref": "#/definitions/T"
+            },
+            "type": "object"
+        },
+        "Dict<ThemeCSSRule>": {
+            "additionalProperties": {
+                "$ref": "#/definitions/T"
+            },
+            "type": "object"
+        },
+        "Dict<[string, string][]>": {
+            "additionalProperties": {
+                "$ref": "#/definitions/T"
+            },
+            "type": "object"
+        },
+        "Dict<string>": {
+            "additionalProperties": {
+                "$ref": "#/definitions/T"
+            },
+            "type": "object"
+        },
+        "NavigationDirection": {
+            "enum": [
+                "left",
+                "top"
+            ],
+            "type": "string"
+        },
+        "T": {
+            "properties": {
+            },
+            "type": "object"
+        },
+        "UserConfigGeoOptions": {
+            "description": "Geographical Options to default if none is retrieved",
+            "properties": {
+                "latitude": {
+                    "type": "number"
+                },
+                "longitude": {
+                    "type": "number"
+                },
+                "zoom": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "UserConfigSourceSettings": {
+            "description": "User Config Source Settings",
+            "properties": {
+                "config": {
+                    "properties": {
+                        "geo_opts": {
+                            "$ref": "#/definitions/UserConfigGeoOptions"
+                        },
+                        "selected_tags": {
+                            "$ref": "#/definitions/Dict<string>"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "enum": [
+                        "facebook"
+                    ],
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "UserConfigStyleSettings": {
+            "properties": {
+                "background": {
+                    "type": "string"
+                },
+                "colors": {
+                    "$ref": "#/definitions/Dict<[string, string][]>"
+                },
+                "corners": {
+                    "type": "number"
+                },
+                "fonts": {
+                    "properties": {
+                        "primary": {
+                            "type": "string"
+                        },
+                        "secondary": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "itemOverlayBorderWidth": {
+                    "type": "number"
+                },
+                "navigationDirection": {
+                    "$ref": "#/definitions/NavigationDirection"
+                },
+                "navigationSize": {
+                    "type": "number"
+                },
+                "outlinePadding": {
+                    "type": "number"
+                },
+                "outlineStyle": {
+                    "type": "string"
+                },
+                "padding": {
+                    "type": "number"
+                },
+                "stylesheets": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "theme": {
+                    "$ref": "#/definitions/Dict<ThemeCSSRule>"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "description": "User Config; provides all the necessary configuration to create a site",
+    "properties": {
+        "labels": {
+            "$ref": "#/definitions/Dict<LabelLocations[]>"
+        },
+        "sources": {
+            "items": {
+                "$ref": "#/definitions/UserConfigSourceSettings"
+            },
+            "type": "array"
+        },
+        "style": {
+            "$ref": "#/definitions/UserConfigStyleSettings"
+        },
+        "user_id": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+
